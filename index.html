@@ -301,17 +301,17 @@ nav.scrolled {
 .fact-label { font-size:.72rem; letter-spacing:.1em; text-transform:uppercase; font-family:'Libre Baskerville',serif; opacity:.8; }
 
 /* ── ELABORACION ── */
-#elaboracion { background:linear-gradient(180deg,var(--mole) 0%,#1A0A03 100%); padding:0; }
-.elab-section { padding:100px 4rem; max-width:1200px; margin:0 auto; }
+#elaboracion { background:linear-gradient(180deg,var(--mole) 0%,#1A0A03 100%); padding:0; overflow:hidden; }
+.elab-section { padding:100px 4rem; max-width:1200px; margin:0 auto; width:100%; box-sizing:border-box; }
 .elab-header { text-align:center; margin-bottom:4rem; }
 .elab-header .section-title { color:var(--beige); }
 .elab-header .section-label { justify-content:center; }
 .elab-header .section-subtitle { color:var(--gold-light); }
 .elab-header p { font-size:1.1rem; color:var(--beige-deeper); max-width:600px; margin:0 auto; line-height:1.8; font-weight:300; }
 .process-steps {
- display:grid; grid-template-columns:repeat(4,1fr); gap:2px;
+ display:grid; grid-template-columns:repeat(4,1fr); gap:1.5rem;
  margin-top:3rem; position:relative;
- align-items:start; justify-items:center;
+ align-items:start; width:100%; min-width:0; box-sizing:border-box;
 }
 .process-steps::before {
  content:''; position:absolute; top:60px; left:10%; width:80%; height:2px;
@@ -690,115 +690,9 @@ footer {
 .carousel-slide:hover span { transform: translateY(0); }
 
 /* ── PROCESO: imágenes más grandes ── */
-.step-img {
- width: 260px !important;
- height: 260px !important;
- object-fit: cover;
- border-radius: 50%;
- display: block;
- margin: 0 auto 1.5rem;
- border: 3px solid rgba(196,147,63,.5) !important;
- box-shadow: 0 8px 25px rgba(0,0,0,.4), 0 0 0 6px rgba(196,147,63,.08);
- transition: transform .4s ease, box-shadow .4s ease;
-}
-.step-card:hover .step-img {
- transform: scale(1.08);
- box-shadow: 0 12px 35px rgba(0,0,0,.5), 0 0 0 8px rgba(196,147,63,.15);
-}
-.step-card { padding: 4rem 2rem 3rem; }
-.process-steps::before { top: 150px; }
 
 
-/* ══ PROCESO OVERRIDE ══ */
-.process-steps {
- display: grid !important;
- grid-template-columns: repeat(4, 1fr) !important;
- gap: 2px !important;
- margin-top: 3rem !important;
- position: relative !important;
- align-items: start !important;
-}
-.process-steps::before {
- content: '' !important;
- position: absolute !important;
- top: 90px !important;
- left: 10% !important;
- width: 80% !important;
- height: 2px !important;
- background: linear-gradient(to right, transparent, var(--gold), transparent) !important;
-}
-.step-card {
- padding: 2.5rem 1.5rem 2rem !important;
- text-align: center !important;
- position: relative !important;
- background: rgba(245,237,216,.04) !important;
- border: 1px solid rgba(196,147,63,.1) !important;
- transition: all .4s !important;
- display: flex !important;
- flex-direction: column !important;
- align-items: center !important;
- justify-content: flex-start !important;
- width: 100% !important;
- box-sizing: border-box !important;
-}
-.step-card:hover {
- background: rgba(245,237,216,.08) !important;
- border-color: rgba(196,147,63,.3) !important;
- transform: translateY(-4px) !important;
-}
-.step-num {
- position: absolute !important;
- top: -16px !important;
- left: 50% !important;
- transform: translateX(-50%) !important;
- width: 32px !important;
- height: 32px !important;
- background: var(--gold) !important;
- color: var(--mole) !important;
- border-radius: 50% !important;
- font-family: 'Playfair Display', serif !important;
- font-weight: 900 !important;
- font-size: .85rem !important;
- display: flex !important;
- align-items: center !important;
- justify-content: center !important;
- z-index: 2 !important;
-}
-.step-img {
- width: 140px !important;
- height: 140px !important;
- object-fit: cover !important;
- border-radius: 50% !important;
- display: block !important;
- margin: 0 auto 1.2rem auto !important;
- border: 3px solid rgba(196,147,63,.5) !important;
- box-shadow: 0 8px 25px rgba(0,0,0,.4), 0 0 0 6px rgba(196,147,63,.08) !important;
- transition: transform .4s ease, box-shadow .4s ease !important;
- flex-shrink: 0 !important;
-}
-.step-card:hover .step-img {
- transform: scale(1.08) !important;
- box-shadow: 0 12px 35px rgba(0,0,0,.5), 0 0 0 8px rgba(196,147,63,.15) !important;
-}
-.step-title {
- font-family: 'Playfair Display', serif !important;
- font-weight: 700 !important;
- color: var(--gold-light) !important;
- font-size: 1rem !important;
- margin-bottom: .6rem !important;
- text-transform: uppercase !important;
- letter-spacing: .05em !important;
- text-align: center !important;
- width: 100% !important;
-}
-.step-desc {
- font-size: .9rem !important;
- color: var(--beige-deeper) !important;
- line-height: 1.7 !important;
- font-weight: 300 !important;
- text-align: center !important;
- width: 100% !important;
-}
+/* ── PROCESO: línea de conexión ajustada ── */
 
 </style>
 </head>
