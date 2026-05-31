@@ -477,26 +477,148 @@ footer {
 .footer-divider { width:60px; height:1px; background:var(--gold); margin:1.5rem auto; opacity:.5; }
 .footer-copy { font-size:.75rem; color:rgba(245,237,216,.3); letter-spacing:.1em; }
 
-/* ── RESPONSIVE ── */
+/* ── RESPONSIVE — TABLET (≤900px) ── */
 @media(max-width:900px){
+  /* NAV */
   .hamburger { display:flex; }
-  .nav-links { display:none; }
-  .hero-content { grid-template-columns:1fr; padding:100px 2rem 60px; }
+  .nav-links {
+    display:none;
+    flex-direction:column;
+    position:absolute;
+    top:68px; left:0; right:0;
+    background:rgba(59,26,10,.99);
+    padding:1.5rem 2rem;
+    gap:1.5rem;
+    z-index:999;
+    border-bottom:1px solid rgba(196,147,63,.2);
+  }
+  .nav-links.open { display:flex; }
+
+  /* HERO */
+  .hero-content {
+    grid-template-columns:1fr;
+    padding:100px 2rem 60px;
+    gap:2rem;
+    text-align:center;
+  }
   .hero-image-side { display:none; }
-  .mole-section { grid-template-columns:1fr; padding:60px 2rem; }
+  .hero-cta { justify-content:center; }
+  .hero-desc { max-width:100%; }
+  .section-label { justify-content:center; }
+
+  /* MOLE */
+  .mole-section { grid-template-columns:1fr; padding:60px 2rem; gap:2rem; }
   .mole-visual { display:none; }
+  .ingredients-grid { grid-template-columns:1fr 1fr; }
+
+  /* ELABORACION */
   .elab-section { padding:60px 2rem; }
-  .process-steps { grid-template-columns:1fr 1fr; }
-  .process-steps::before { display:none; }
+  .process-steps { grid-template-columns:1fr 1fr !important; gap:2rem !important; }
+  .process-steps::before { display:none !important; }
   .elab-detail { grid-template-columns:1fr; }
-  .trad-section { grid-template-columns:1fr; padding:60px 2rem; }
+  .elab-tools { grid-template-columns:1fr 1fr; }
+
+  /* TRADICION */
+  .trad-section { grid-template-columns:1fr; padding:60px 2rem; gap:2rem; }
   #tradicion::before { display:none; }
+  .trad-values { grid-template-columns:1fr 1fr; }
+
+  /* GALERIA */
   .galeria-grid { grid-template-columns:repeat(3,1fr); }
   .galeria-item:nth-child(4),
   .galeria-item:nth-child(5) { display:none; }
-  .contact-grid { grid-template-columns:1fr; }
+  .carousel-slide { flex:0 0 360px; height:280px; }
+
+  /* CONTACTO */
+  .contact-grid { grid-template-columns:1fr; gap:2rem; }
   .contact-section { padding:60px 2rem; }
+  .form-row { grid-template-columns:1fr; }
+
+  /* FOOTER */
   footer { padding:2rem; }
+}
+
+/* ── RESPONSIVE — MÓVIL (≤600px) ── */
+@media(max-width:600px){
+  /* NAV */
+  nav { padding:0 1rem; height:60px; }
+  nav.scrolled { height:54px; }
+  .nav-links { top:60px; padding:1.2rem 1rem; gap:1.2rem; }
+  .btn-compra { padding:6px 14px !important; font-size:.75rem !important; }
+
+  /* HERO */
+  .hero-content { padding:90px 1.2rem 50px; text-align:center; }
+  .hero-badge { margin-bottom:1rem; }
+  .hero-title { font-size:clamp(2.8rem,14vw,4rem); }
+  .hero-tagline { font-size:clamp(1rem,4.5vw,1.3rem); margin:.8rem 0 1rem; }
+  .hero-desc { font-size:1rem; margin-bottom:1.5rem; }
+  .hero-cta { flex-direction:column; align-items:center; gap:.8rem; }
+  .btn-primary,.btn-secondary { width:100%; text-align:center; padding:14px 24px; }
+  .hero-scroll { display:none; }
+
+  /* ORNAMENT */
+  .ornament { font-size:.8rem; height:50px; }
+
+  /* SECTION HELPERS */
+  .section-title { font-size:clamp(1.8rem,8vw,2.6rem); }
+  .section-subtitle { font-size:1.1rem; }
+  .section-label { font-size:.62rem; gap:8px; }
+  .section-label::before,.section-label::after { width:20px; }
+
+  /* MOLE */
+  .mole-section { padding:50px 1.2rem; }
+  .mole-story { font-size:1.05rem; line-height:1.8; }
+  .ingredients-grid { grid-template-columns:1fr; }
+  .ingredient-card { padding:1rem 1.2rem; }
+
+  /* ELABORACION */
+  .elab-section { padding:50px 1.2rem; }
+  .elab-header p { font-size:1rem; }
+  .process-steps {
+    grid-template-columns:1fr !important;
+    gap:2.5rem !important;
+    margin-top:2rem !important;
+  }
+  .step-img { width:110px !important; height:110px !important; }
+  .step-card { padding:2.5rem 1.2rem 1.5rem !important; }
+  .elab-quote blockquote { font-size:1.2rem; }
+  .elab-tools { grid-template-columns:1fr; }
+
+  /* TRADICION */
+  .trad-section { padding:50px 1.2rem; }
+  .trad-story { font-size:1.05rem; }
+  .trad-vertical-card { padding:2rem 1.5rem; }
+  .trad-card-title { font-size:1.3rem; }
+  .trad-values { grid-template-columns:1fr 1fr; gap:.6rem; }
+  .trad-value { padding:.8rem; }
+  .trad-img-caption img { height:180px; }
+  .highlight-row { padding:.8rem .5rem; gap:.8rem; }
+
+  /* GALERIA CARRUSEL */
+  .carousel-slide { flex:0 0 280px; height:210px; }
+  .galeria-eyebrow { font-size:.62rem; margin-bottom:1.5rem; }
+
+  /* CONTACTO */
+  .contact-section { padding:50px 1.2rem; }
+  .contact-header { margin-bottom:2.5rem; }
+  .contact-header p { font-size:1rem; }
+  .contact-info-title { font-size:1.1rem; }
+  .form-group input,
+  .form-group textarea,
+  .form-group select { font-size:.95rem; padding:11px 14px; }
+  .btn-submit { width:100%; text-align:center; padding:14px 24px; }
+  .info-items { gap:1rem; }
+  .info-item { gap:.7rem; }
+  .info-icon { font-size:1.3rem; min-width:28px; }
+  .info-value { font-size:.9rem; }
+  .social-links { gap:.7rem; }
+  .social-btn { width:40px; height:40px; font-size:1.1rem; }
+
+  /* FOOTER */
+  footer { padding:2rem 1.2rem; }
+  .footer-logo { font-size:1.4rem; }
+  .footer-tagline { font-size:.95rem; }
+  .footer-copy { font-size:.68rem; letter-spacing:.05em; }
 }
 
 /* ── CARRUSEL GALERÍA ── */
@@ -978,18 +1100,27 @@ function handleSubmit(e) {
   setTimeout(() => { btn.textContent = '🌶 Enviar pedido'; btn.style.background = ''; }, 3000);
 }
 
-document.getElementById('hamburger').addEventListener('click', () => {
-  const links = document.querySelector('.nav-links');
-  const isOpen = links.style.display === 'flex';
-  Object.assign(links.style, {
-    display: isOpen ? 'none' : 'flex',
-    flexDirection: 'column',
-    position: 'absolute',
-    top: '68px', left: '0', right: '0',
-    background: 'rgba(59,26,10,0.99)',
-    padding: '1.5rem 2rem',
-    gap: '1.5rem',
-    zIndex: '999'
+const hamburgerBtn = document.getElementById('hamburger');
+const navLinks = document.querySelector('.nav-links');
+
+hamburgerBtn.addEventListener('click', () => {
+  navLinks.classList.toggle('open');
+  // Animate hamburger spans
+  const spans = hamburgerBtn.querySelectorAll('span');
+  const isOpen = navLinks.classList.contains('open');
+  spans[0].style.transform = isOpen ? 'rotate(45deg) translate(5px,5px)' : '';
+  spans[1].style.opacity  = isOpen ? '0' : '1';
+  spans[2].style.transform = isOpen ? 'rotate(-45deg) translate(5px,-5px)' : '';
+});
+
+// Close menu when clicking a nav link on mobile
+navLinks.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    const spans = hamburgerBtn.querySelectorAll('span');
+    spans[0].style.transform = '';
+    spans[1].style.opacity = '1';
+    spans[2].style.transform = '';
   });
 });
 </script>
